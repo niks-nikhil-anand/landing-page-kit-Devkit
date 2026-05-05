@@ -48,21 +48,18 @@ export function FAQSection() {
   return (
     <section
       id="faq"
-      className="py-24"
+      className="py-16 md:py-24"
       style={{
         borderBottom: "1px solid var(--dk-line)",
         background: "var(--dk-bg2)",
       }}
     >
-      <div className="max-w-[1240px] mx-auto px-7">
-        <div
-          className="grid gap-20"
-          style={{ gridTemplateColumns: "280px 1fr" }}
-        >
+      <div className="max-w-[1240px] mx-auto px-5 md:px-7">
+        <div className="grid grid-cols-1 lg:grid-cols-[280px_1fr] gap-10 md:gap-20">
           {/* Sidebar */}
           <div>
             <div
-              className="dk-mono text-xs uppercase tracking-widest flex items-center gap-2.5 mb-7"
+              className="dk-mono text-xs uppercase tracking-widest flex items-center gap-2.5 mb-6 md:mb-7"
               style={{ color: "var(--dk-ink2)" }}
             >
               <span className="block w-6 h-px" style={{ background: "var(--dk-ink)" }} />
@@ -71,7 +68,7 @@ export function FAQSection() {
             <h2
               className="font-semibold m-0"
               style={{
-                fontSize: "clamp(36px, 4vw, 52px)",
+                fontSize: "clamp(32px, 4vw, 52px)",
                 lineHeight: 1,
                 letterSpacing: "-0.03em",
               }}
@@ -80,7 +77,7 @@ export function FAQSection() {
               <span className="dk-serif">actually</span> ask.
             </h2>
             <p
-              className="text-base mt-5 max-w-[38ch]"
+              className="text-base mt-4 md:mt-5 max-w-[38ch]"
               style={{ color: "var(--dk-muted)" }}
             >
               Still stuck? Open an issue on GitHub or hop in the Discord —
@@ -96,21 +93,20 @@ export function FAQSection() {
                 className="group"
                 style={{
                   borderBottom: "1px solid var(--dk-line)",
-                  padding: "24px 4px",
+                  padding: "20px 4px",
                 }}
                 open={i === 0}
               >
                 <summary
-                  className="list-none cursor-pointer flex justify-between gap-6 items-center font-medium"
+                  className="list-none cursor-pointer flex justify-between gap-4 md:gap-6 items-center font-medium text-base md:text-[18px]"
                   style={{
-                    fontSize: "18px",
                     letterSpacing: "-0.01em",
                     listStyle: "none",
                   }}
                 >
                   <span>
                     <span
-                      className="dk-mono text-xs mr-4"
+                      className="dk-mono text-xs mr-3 md:mr-4"
                       style={{ color: "var(--dk-muted)" }}
                     >
                       {faq.num}
@@ -130,7 +126,7 @@ export function FAQSection() {
                   className="mt-3.5 text-[15px] max-w-[72ch]"
                   style={{
                     color: "var(--dk-muted)",
-                    paddingLeft: "36px",
+                    paddingLeft: "28px",
                   }}
                 >
                   {faq.a}

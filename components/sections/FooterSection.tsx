@@ -14,18 +14,15 @@ const legal = ["Privacy", "Terms", "License (MIT)", "Cookies"];
 
 export function FooterSection() {
   return (
-    <footer style={{ background: "var(--dk-bg)", paddingTop: "80px" }}>
-      <div className="max-w-[1240px] mx-auto px-7">
+    <footer style={{ background: "var(--dk-bg)", paddingTop: "60px" }}>
+      <div className="max-w-[1240px] mx-auto px-5 md:px-7">
         {/* Top grid */}
         <div
-          className="grid gap-12 pb-16"
-          style={{
-            gridTemplateColumns: "2fr 1fr 1fr 1fr 1fr",
-            borderBottom: "1px solid var(--dk-line)",
-          }}
+          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-[2fr_1fr_1fr_1fr_1fr] gap-8 md:gap-10 lg:gap-12 pb-12 md:pb-16"
+          style={{ borderBottom: "1px solid var(--dk-line)" }}
         >
-          {/* Brand block */}
-          <div>
+          {/* Brand block — spans 2 cols on mobile/tablet, 1 col on desktop */}
+          <div className="col-span-2 md:col-span-3 lg:col-span-1">
             <Link
               href="#"
               className="flex items-center gap-2.5 font-bold no-underline mb-3"
@@ -204,7 +201,7 @@ export function FooterSection() {
 
         {/* Bottom bar */}
         <div
-          className="dk-mono text-xs flex justify-between items-center py-7"
+          className="dk-mono text-xs flex flex-col gap-2 items-center text-center sm:flex-row sm:justify-between sm:text-left py-6 md:py-7"
           style={{ color: "var(--dk-muted)" }}
         >
           <span>© 2026 devkitmarket inc.</span>
@@ -219,15 +216,14 @@ export function FooterSection() {
 
       {/* Mega text */}
       <div
-        className="overflow-hidden"
+        className="overflow-hidden footer-mega"
         style={{
           fontFamily: "var(--font-space-grotesk), sans-serif",
           fontWeight: 600,
-          fontSize: "clamp(80px, 16vw, 240px)",
           lineHeight: 0.85,
           letterSpacing: "-0.05em",
           color: "var(--dk-ink)",
-          padding: "60px 28px 0",
+          padding: "40px 20px 0",
           borderTop: "1px solid var(--dk-line)",
         }}
       >
