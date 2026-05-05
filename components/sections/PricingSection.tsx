@@ -63,18 +63,15 @@ export function PricingSection() {
   return (
     <section
       id="pricing"
-      className="py-24"
+      className="py-16 md:py-24"
       style={{
         borderBottom: "1px solid var(--dk-line)",
         background: "var(--dk-bg2)",
       }}
     >
-      <div className="max-w-[1240px] mx-auto px-7">
+      <div className="max-w-[1240px] mx-auto px-5 md:px-7">
         {/* Section header */}
-        <div
-          className="grid gap-10 items-end mb-14"
-          style={{ gridTemplateColumns: "220px 1fr 1fr" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[220px_1fr_1fr] gap-6 md:gap-10 items-end mb-10 md:mb-14">
           <div
             className="dk-mono text-xs uppercase tracking-widest flex items-center gap-2.5"
             style={{ color: "var(--dk-ink2)" }}
@@ -85,7 +82,7 @@ export function PricingSection() {
           <h2
             className="font-semibold m-0 max-w-[16ch]"
             style={{
-              fontSize: "clamp(36px, 4.4vw, 60px)",
+              fontSize: "clamp(32px, 4.4vw, 60px)",
               lineHeight: 1,
               letterSpacing: "-0.03em",
             }}
@@ -108,7 +105,7 @@ export function PricingSection() {
 
         {/* Toggle */}
         <div
-          className="inline-flex dk-mono text-xs rounded-full p-1 mb-9"
+          className="inline-flex dk-mono text-xs rounded-full p-1 mb-8 md:mb-9"
           style={{
             border: "1px solid var(--dk-line)",
             background: "var(--dk-card)",
@@ -139,10 +136,8 @@ export function PricingSection() {
 
         {/* Pricing cards */}
         <div
-          className="overflow-hidden"
+          className="overflow-hidden grid grid-cols-1 md:grid-cols-3"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
             border: "1px solid var(--dk-line)",
             borderRadius: "18px",
             background: "var(--dk-card)",
@@ -151,17 +146,15 @@ export function PricingSection() {
           {tiers.map((tier, i) => (
             <div
               key={tier.name}
-              className="p-9 flex flex-col gap-6"
+              className={`p-7 md:p-9 flex flex-col gap-6${i < 2 ? " pricing-card-border" : ""}`}
               style={{
-                borderRight: i < 2 ? "1px solid var(--dk-line)" : "none",
+                borderBottom: i < 2 ? "1px solid var(--dk-line)" : "none",
                 background: tier.popular ? "var(--dk-ink)" : "var(--dk-card)",
                 color: tier.popular ? "var(--dk-bg)" : "var(--dk-ink)",
               }}
             >
               {/* Tier name */}
-              <div
-                className="dk-mono text-xs uppercase tracking-widest flex justify-between items-center"
-              >
+              <div className="dk-mono text-xs uppercase tracking-widest flex justify-between items-center">
                 <span>{tier.name}</span>
                 {tier.popular && (
                   <span
@@ -179,7 +172,7 @@ export function PricingSection() {
               {/* Price */}
               <div
                 className="font-semibold flex items-baseline gap-1.5"
-                style={{ fontSize: "56px", lineHeight: 1, letterSpacing: "-0.04em" }}
+                style={{ fontSize: "clamp(40px, 5vw, 56px)", lineHeight: 1, letterSpacing: "-0.04em" }}
               >
                 {annual ? tier.price.annual : tier.price.monthly}
                 {tier.unit && (

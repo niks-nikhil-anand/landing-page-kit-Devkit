@@ -19,10 +19,10 @@ export function HeroSection() {
         }}
       />
 
-      <div className="relative px-7 pt-20 pb-24 max-w-[1240px] mx-auto hero-animate">
+      <div className="relative px-5 md:px-7 pt-14 md:pt-20 pb-16 md:pb-24 max-w-[1240px] mx-auto hero-animate">
         {/* Badge */}
         <div
-          className="inline-flex items-center gap-2.5 dk-mono text-xs rounded-full border mb-7"
+          className="inline-flex items-center gap-2.5 dk-mono text-xs rounded-full border mb-6 md:mb-7"
           style={{
             padding: "6px 12px 6px 8px",
             borderColor: "var(--dk-line)",
@@ -43,9 +43,9 @@ export function HeroSection() {
 
         {/* Headline */}
         <h1
-          className="font-semibold m-0 mb-7 max-w-[14ch]"
+          className="font-semibold m-0 mb-6 md:mb-7 max-w-[14ch]"
           style={{
-            fontSize: "clamp(48px, 7.4vw, 104px)",
+            fontSize: "clamp(40px, 7.4vw, 104px)",
             lineHeight: 0.95,
             letterSpacing: "-0.035em",
           }}
@@ -71,9 +71,9 @@ export function HeroSection() {
 
         {/* Lede */}
         <p
-          className="m-0 mb-9 max-w-[56ch]"
+          className="m-0 mb-8 md:mb-9 max-w-[56ch]"
           style={{
-            fontSize: "clamp(17px, 1.4vw, 20px)",
+            fontSize: "clamp(16px, 1.4vw, 20px)",
             color: "var(--dk-ink2)",
           }}
         >
@@ -88,7 +88,7 @@ export function HeroSection() {
             href="#waitlist"
             className="inline-flex items-center gap-2 font-semibold no-underline rounded-[12px] border hover:-translate-y-px transition-transform"
             style={{
-              padding: "15px 22px",
+              padding: "13px 20px",
               fontSize: "15px",
               background: "var(--dk-ink)",
               color: "var(--dk-bg)",
@@ -101,7 +101,7 @@ export function HeroSection() {
             href="#"
             className="inline-flex items-center gap-2 font-semibold no-underline rounded-[12px] border hover:-translate-y-px transition-transform"
             style={{
-              padding: "15px 22px",
+              padding: "13px 20px",
               fontSize: "15px",
               background: "var(--dk-bg)",
               color: "var(--dk-ink)",
@@ -111,7 +111,7 @@ export function HeroSection() {
             View on GitHub <span>↗</span>
           </Link>
           <span
-            className="dk-mono text-[13px] inline-flex items-center gap-2 ml-2"
+            className="dk-mono text-[13px] inline-flex items-center gap-2 md:ml-2 w-full md:w-auto mt-1 md:mt-0"
             style={{ color: "var(--dk-muted)" }}
           >
             <span style={{ color: "var(--dk-ink)", letterSpacing: "1px" }}>
@@ -123,20 +123,18 @@ export function HeroSection() {
 
         {/* Preview Mosaic */}
         <div
-          className="mt-16 overflow-hidden"
+          className="mt-12 md:mt-16 overflow-hidden grid grid-cols-1 md:grid-cols-[1.4fr_1fr]"
           style={{
             border: "1px solid var(--dk-line)",
             borderRadius: "18px",
             background: "var(--dk-card)",
             boxShadow: "var(--dk-shadow)",
-            display: "grid",
-            gridTemplateColumns: "1.4fr 1fr",
           }}
         >
           {/* Left side */}
           <div
-            className="p-7 pb-0"
-            style={{ borderRight: "1px solid var(--dk-line)" }}
+            className="p-5 md:p-7 pb-0 md:border-r"
+            style={{ borderColor: "var(--dk-line)" }}
           >
             <div
               className="dk-mono text-[11px] uppercase tracking-widest mb-3.5 flex items-center justify-between"
@@ -161,7 +159,7 @@ export function HeroSection() {
             <h3
               className="font-semibold m-0 mb-2.5"
               style={{
-                fontSize: "36px",
+                fontSize: "clamp(22px, 3vw, 36px)",
                 lineHeight: 1,
                 letterSpacing: "-0.025em",
               }}
@@ -197,7 +195,7 @@ export function HeroSection() {
               </span>
             </div>
             <div
-              className="flex gap-5 py-3.5 items-center opacity-70"
+              className="flex gap-3 md:gap-5 py-3.5 items-center opacity-70 flex-wrap"
               style={{ borderTop: "1px solid var(--dk-line-soft)" }}
             >
               <span
@@ -220,7 +218,7 @@ export function HeroSection() {
 
           {/* Right side */}
           <div
-            className="p-6 flex flex-col gap-2.5"
+            className="p-5 md:p-6 flex flex-col gap-2.5"
             style={{ background: "var(--dk-bg2)" }}
           >
             {[
@@ -250,9 +248,7 @@ export function HeroSection() {
                 key={card.num}
                 className="rounded-[10px] p-3 text-xs flex gap-2.5 items-start"
                 style={{
-                  border: card.featured
-                    ? `1px solid var(--dk-line)`
-                    : `1px solid var(--dk-line)`,
+                  border: `1px solid var(--dk-line)`,
                   borderLeft: card.featured
                     ? `3px solid var(--dk-accent)`
                     : `1px solid var(--dk-line)`,
