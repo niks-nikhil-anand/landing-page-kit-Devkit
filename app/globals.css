@@ -208,6 +208,34 @@ details[open] .faq-toggle {
   transform: rotate(45deg);
 }
 
+/* Footer mega text — responsive size */
+.footer-mega {
+  font-size: clamp(32px, 8vw, 80px);
+}
+@media (min-width: 1024px) {
+  .footer-mega {
+    font-size: clamp(80px, 16vw, 240px);
+  }
+}
+
+/* Pricing / Testimonials: switch from bottom border (mobile) to right border (desktop) */
+@media (min-width: 768px) {
+  .pricing-card-border {
+    border-bottom: none !important;
+    border-right: 1px solid var(--dk-line) !important;
+  }
+  .pricing-card-border:last-child {
+    border-right: none !important;
+  }
+  .quote-card-border {
+    border-bottom: none !important;
+    border-right: 1px solid var(--dk-line) !important;
+  }
+  .quote-card-border:last-child {
+    border-right: none !important;
+  }
+}
+
 /* ── Base layer overrides ── */
 @layer base {
   *, *::before, *::after {
