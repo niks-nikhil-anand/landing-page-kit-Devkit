@@ -10,10 +10,7 @@ const logos = [
 export function LogosSection() {
   return (
     <section style={{ borderBottom: "1px solid var(--dk-line)", background: "var(--dk-bg2)" }}>
-      <div
-        className="items-center px-7 py-7 max-w-[1240px] mx-auto gap-10"
-        style={{ display: "grid", gridTemplateColumns: "220px 1fr" }}
-      >
+      <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] items-center px-5 md:px-7 py-7 max-w-[1240px] mx-auto gap-6 md:gap-10">
         {/* Label */}
         <div
           className="dk-mono text-xs uppercase tracking-widest leading-relaxed"
@@ -27,21 +24,17 @@ export function LogosSection() {
 
         {/* Logo list */}
         <div
-          className="items-center"
-          style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(6, 1fr)",
-            borderLeft: "1px solid var(--dk-line-soft)",
-          }}
+          className="grid grid-cols-3 md:grid-cols-6 items-center md:border-l"
+          style={{ borderColor: "var(--dk-line-soft)" }}
         >
           {logos.map((logo) => (
             <div
               key={logo.name}
-              className="logo-item text-center font-bold text-[17px] py-3.5 px-[18px] cursor-default"
+              className="logo-item text-center font-bold text-[15px] md:text-[17px] py-3 md:py-3.5 px-3 md:px-[18px] cursor-default border-r"
               style={{
                 letterSpacing: "-0.02em",
                 color: "var(--dk-muted)",
-                borderRight: "1px solid var(--dk-line-soft)",
+                borderColor: "var(--dk-line-soft)",
                 fontFamily: "var(--font-space-grotesk), sans-serif",
               }}
             >

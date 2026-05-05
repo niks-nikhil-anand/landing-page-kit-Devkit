@@ -115,15 +115,12 @@ export function FeaturesSection() {
   return (
     <section
       id="features"
-      className="py-24"
+      className="py-16 md:py-24"
       style={{ borderBottom: "1px solid var(--dk-line)" }}
     >
-      <div className="max-w-[1240px] mx-auto px-7">
+      <div className="max-w-[1240px] mx-auto px-5 md:px-7">
         {/* Section header */}
-        <div
-          className="grid gap-10 items-end mb-14"
-          style={{ gridTemplateColumns: "220px 1fr 1fr" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[220px_1fr_1fr] gap-6 md:gap-10 items-end mb-10 md:mb-14">
           <div
             className="dk-mono text-xs uppercase tracking-widest flex items-center gap-2.5"
             style={{ color: "var(--dk-ink2)" }}
@@ -137,7 +134,7 @@ export function FeaturesSection() {
           <h2
             className="font-semibold m-0 max-w-[16ch]"
             style={{
-              fontSize: "clamp(36px, 4.4vw, 60px)",
+              fontSize: "clamp(32px, 4.4vw, 60px)",
               lineHeight: 1,
               letterSpacing: "-0.03em",
             }}
@@ -163,12 +160,10 @@ export function FeaturesSection() {
       </div>
 
       {/* Features grid */}
-      <div className="max-w-[1240px] mx-auto px-7">
+      <div className="max-w-[1240px] mx-auto px-5 md:px-7">
         <div
-          className="features-grid"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(3, 1fr)",
             borderTop: "1px solid var(--dk-line)",
             borderLeft: "1px solid var(--dk-line)",
           }}
@@ -176,7 +171,7 @@ export function FeaturesSection() {
           {features.map((feat) => (
             <article
               key={feat.num}
-              className={`feat-card p-7 pb-9${feat.highlight ? " feat-card--hl" : ""}`}
+              className={`feat-card p-6 md:p-7 pb-8 md:pb-9${feat.highlight ? " feat-card--hl" : ""}`}
               style={{
                 borderRight: "1px solid var(--dk-line)",
                 borderBottom: "1px solid var(--dk-line)",
@@ -185,7 +180,7 @@ export function FeaturesSection() {
               }}
             >
               <div
-                className="dk-mono text-[11px] uppercase tracking-[0.08em] flex justify-between mb-7"
+                className="dk-mono text-[11px] uppercase tracking-[0.08em] flex justify-between mb-6 md:mb-7"
                 style={{
                   color: feat.highlight
                     ? "rgba(243,241,234,0.5)"
@@ -196,7 +191,7 @@ export function FeaturesSection() {
                 <span>{feat.tag}</span>
               </div>
               <div
-                className="w-11 h-11 rounded-[10px] flex items-center justify-center mb-6"
+                className="w-11 h-11 rounded-[10px] flex items-center justify-center mb-5 md:mb-6"
                 style={{
                   border: feat.highlight
                     ? "1px solid rgba(255,255,255,0.18)"
