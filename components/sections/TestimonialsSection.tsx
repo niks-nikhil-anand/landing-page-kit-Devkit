@@ -49,15 +49,12 @@ export function TestimonialsSection() {
   return (
     <section
       id="voices"
-      className="py-24"
+      className="py-16 md:py-24"
       style={{ borderBottom: "1px solid var(--dk-line)" }}
     >
-      <div className="max-w-[1240px] mx-auto px-7">
+      <div className="max-w-[1240px] mx-auto px-5 md:px-7">
         {/* Section header */}
-        <div
-          className="grid gap-10 items-end mb-14"
-          style={{ gridTemplateColumns: "220px 1fr 1fr" }}
-        >
+        <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] lg:grid-cols-[220px_1fr_1fr] gap-6 md:gap-10 items-end mb-10 md:mb-14">
           <div
             className="dk-mono text-xs uppercase tracking-widest flex items-center gap-2.5"
             style={{ color: "var(--dk-ink2)" }}
@@ -68,7 +65,7 @@ export function TestimonialsSection() {
           <h2
             className="font-semibold m-0 max-w-[16ch]"
             style={{
-              fontSize: "clamp(36px, 4.4vw, 60px)",
+              fontSize: "clamp(32px, 4.4vw, 60px)",
               lineHeight: 1,
               letterSpacing: "-0.03em",
             }}
@@ -84,10 +81,8 @@ export function TestimonialsSection() {
 
         {/* Quotes grid */}
         <div
-          className="overflow-hidden"
+          className="overflow-hidden grid grid-cols-1 md:grid-cols-3"
           style={{
-            display: "grid",
-            gridTemplateColumns: "1.2fr 1fr 1fr",
             border: "1px solid var(--dk-line)",
             borderRadius: "18px",
           }}
@@ -95,12 +90,12 @@ export function TestimonialsSection() {
           {quotes.map((q, i) => (
             <div
               key={q.author}
-              className="flex flex-col gap-5 p-9"
+              className={`flex flex-col gap-5 p-7 md:p-9${i < 2 ? " quote-card-border" : ""}`}
               style={{
-                borderRight: i < 2 ? "1px solid var(--dk-line)" : "none",
+                borderBottom: i < 2 ? "1px solid var(--dk-line)" : "none",
                 background: q.featured ? "var(--dk-accent)" : "var(--dk-card)",
                 color: q.featured ? "var(--dk-accent-ink)" : "var(--dk-ink)",
-                minHeight: "320px",
+                minHeight: "280px",
               }}
             >
               {/* Stars */}
@@ -115,7 +110,7 @@ export function TestimonialsSection() {
               <blockquote
                 className="m-0"
                 style={{
-                  fontSize: q.featured ? "26px" : "19px",
+                  fontSize: q.featured ? "clamp(18px, 2.2vw, 26px)" : "clamp(16px, 1.8vw, 19px)",
                   lineHeight: q.featured ? 1.25 : 1.4,
                   letterSpacing: q.featured ? "-0.02em" : "-0.01em",
                 }}

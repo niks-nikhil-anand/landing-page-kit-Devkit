@@ -30,10 +30,7 @@ export function WaitlistSection() {
         }}
       />
 
-      <div
-        className="relative max-w-[1240px] mx-auto px-7 py-24 grid gap-20 items-end"
-        style={{ gridTemplateColumns: "1.1fr 1fr" }}
-      >
+      <div className="relative max-w-[1240px] mx-auto px-5 md:px-7 py-16 md:py-24 grid grid-cols-1 md:grid-cols-[1.1fr_1fr] gap-10 md:gap-20 items-end">
         {/* Copy */}
         <div>
           <div
@@ -46,7 +43,7 @@ export function WaitlistSection() {
           <h2
             className="font-semibold m-0 max-w-[18ch]"
             style={{
-              fontSize: "clamp(36px, 4.4vw, 60px)",
+              fontSize: "clamp(32px, 4.4vw, 60px)",
               lineHeight: 1,
               letterSpacing: "-0.03em",
               color: "var(--dk-bg)",
@@ -65,7 +62,7 @@ export function WaitlistSection() {
             </span>
           </h2>
           <p
-            className="mt-5 text-[17px] max-w-[44ch]"
+            className="mt-4 md:mt-5 text-[17px] max-w-[44ch]"
             style={{ color: "rgba(243,241,234,0.7)" }}
           >
             Drop your email and we&apos;ll send the download link, plus a
@@ -77,7 +74,7 @@ export function WaitlistSection() {
         {/* Form card */}
         <form
           onSubmit={handleSubmit}
-          className="rounded-[18px] p-7"
+          className="rounded-[18px] p-6 md:p-7"
           style={{
             background: "rgba(255,255,255,0.04)",
             border: "1px solid rgba(243,241,234,0.18)",
@@ -90,10 +87,7 @@ export function WaitlistSection() {
           >
             Your email
           </label>
-          <div
-            className="grid gap-2 mt-2.5 mb-4"
-            style={{ gridTemplateColumns: "1fr auto" }}
-          >
+          <div className="flex flex-col sm:grid sm:grid-cols-[1fr_auto] gap-2 mt-2.5 mb-4">
             <input
               id="waitlist-email"
               type="email"
@@ -118,7 +112,7 @@ export function WaitlistSection() {
             />
             <button
               type="submit"
-              className="inline-flex items-center gap-2 text-sm font-semibold rounded-[10px] border hover:-translate-y-px transition-all cursor-pointer"
+              className="inline-flex items-center justify-center gap-2 text-sm font-semibold rounded-[10px] border hover:-translate-y-px transition-all cursor-pointer"
               style={{
                 padding: "14px 18px",
                 background: status === "success" ? "var(--dk-accent)" : "var(--dk-bg)",
@@ -131,7 +125,7 @@ export function WaitlistSection() {
             </button>
           </div>
           <div
-            className="dk-mono text-[11px] flex gap-4 flex-wrap"
+            className="dk-mono text-[11px] flex gap-3 md:gap-4 flex-wrap"
             style={{ color: "rgba(243,241,234,0.5)" }}
           >
             {["No spam, ever", "Unsubscribe in one click", "2,148 devs already in"].map(
