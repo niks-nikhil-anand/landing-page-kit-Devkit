@@ -7,7 +7,7 @@
 
 A high-performance, beautifully designed landing page kit that competitors charge $100+ for. Yours for free. Built with **Next.js 14 (App Router)**, **Tailwind CSS**, and **shadcn/ui**.
 
-**[Live Demo](https://devkit-landing-page.vercel.app)** · **[Get it on DevKit Market](https://devkitmarket.com/products/landing-page-kit)**
+**[Live Demo](https://landing-page-kit-devkit.vercel.app/)** · **[Get it on DevKit Market](https://devkitmarket.com/products/landing-page-kit)**
 
 ---
 
